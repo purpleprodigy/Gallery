@@ -20,7 +20,7 @@ To install this plugin, you can download it by clicking on the GitHub download b
 
 ## Requirements
 
-To use this Gallery plugin, you also need to install the[Polestar Must-Use Plugin.](https://github.com/purpleprodigy/Polestar.git) To install this plugin, you can download it by clicking on the GitHub download button or clone the repository.
+To use this Gallery plugin, you also need to install the [Polestar Must-Use Plugin.](https://github.com/purpleprodigy/Polestar.git) To install this plugin, you can download it by clicking on the GitHub download button or clone the repository.
 
 1. Navigate to the 'wp-content/mu-plugins' folder of your project or create the 'mu-plugins' folder if it does not already exist.
 2. Then type in terminal: 'git clone https://github.com/purpleprodigy/Polestar.git'.
