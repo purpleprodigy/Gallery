@@ -133,3 +133,20 @@ function get_posts_grouped_by_term_from_db( $post_type_name, $taxonomy_name ) {
 
 	return $results;
 }
+
+add_action( 'after_setup_theme', __NAMESPACE__ . '\gallery_after_setup_theme' );
+/**
+ * Adds new gallery image size if not already set in child theme
+ *
+ * @since 0.1.0
+ *
+ */
+function gallery_after_setup_theme() {
+
+	global $_wp_additional_image_sizes;
+
+	if ( ! isset( $_wp_additional_image_sizes['gallery'] ) ) {
+		add_image_size( 'gallery', 300, 200, TRUE );
+	}
+
+}

@@ -8,6 +8,7 @@
  * @link        https:/purpleprodigy.com
  * @licence     GNU General Public License 2.0+
  */
+
 namespace PurpleProdigy\Gallery;
 
 return array(
@@ -19,35 +20,36 @@ return array(
 	/**============================================
 	 * Label configuration
 	 *============================================*/
-	'labels' => array(
-		'custom_type' => 'gallery',
-		'singular_label' => 'Gallery',
-		'plural_label' => 'Gallery',
+	'labels'    => array(
+		'custom_type'       => 'gallery',
+		'singular_label'    => 'Gallery',
+		'plural_label'      => 'Gallery',
 		'in_sentence_label' => 'gallery',
-		'text_domain' => GALLERY_TEXT_DOMAIN,
+		'text_domain'       => GALLERY_TEXT_DOMAIN,
 	),
 
 	/**============================================
 	 * Supported features for this post type
 	 *============================================*/
-	'features' => array(
-		'base_post_type' => 'post',
-		'exclude' => array(
+	'features'  => array(
+		'base_post_type'  => 'page',
+		'exclude'         => array(
 			'excerpt',
 			'comments',
 			'trackbacks',
+			'revisions',
 			'custom-fields',
 			'author',
 			'genesis-seo',
 			'genesis-layouts',
-			'genesis-scripts'
-			),
+			'genesis-scripts',
+		),
 	),
 
 	/**============================================
 	 * Arguments for registering the post type
 	 *============================================*/
-	'args' => array(
+	'args'      => array(
 		'description'   => 'Gallery Display',
 		'label'         => __( 'Gallery', GALLERY_TEXT_DOMAIN ),
 		'labels'        => '', // automatically generate the labels.
