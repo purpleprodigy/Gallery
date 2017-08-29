@@ -21,14 +21,13 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  */
 function enqueue_assets() {
 
-	$module_dir = GALLERY_DIR;
 	$asset_file = 'assets/css/style.css';
 
 	wp_enqueue_style(
 		'gallery_style',
-		$module_dir . $asset_file,
+		GALLERY_URL . $asset_file,
 		array(),
-		get_asset_current_version_number( $module_dir . $asset_file )
+		get_asset_current_version_number( GALLERY_DIR . $asset_file )
 	);
 
 	wp_enqueue_style( 'dashicons' );
