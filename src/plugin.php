@@ -48,7 +48,7 @@ function autoload() {
 	);
 
 	foreach ( $files as $file ) {
-		include( __DIR__ . '/' . $file );
+		include __DIR__ . '/' . $file;
 	}
 }
 

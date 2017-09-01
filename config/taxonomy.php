@@ -15,26 +15,26 @@ return array(
 	/**=============================================================
 	 * The taxonomy name.
 	 *============================================================*/
-	'taxonomy' => 'gallery-type',
+	'taxonomy'   => 'gallery-type',
 
 	/**=============================================================
 	 * The label configuration.
 	 *============================================================*/
-	'labels' => array(
-		'custom_type' => 'gallery-type',
-		'singular_label' => 'Gallery type',
-		'plural_label' => 'Gallery types',
+	'labels'     => array(
+		'custom_type'       => 'gallery-type',
+		'singular_label'    => 'Gallery type',
+		'plural_label'      => 'Gallery types',
 		'in_sentence_label' => 'gallery type',
-		'text_domain' => GALLERY_TEXT_DOMAIN,
-		'specific_labels' => array(),
+		'text_domain'       => GALLERY_TEXT_DOMAIN,
+		'specific_labels'   => array(),
 	),
 
 	/**=============================================================
 	 * These are the arguments for registering the taxonomy.
 	 *============================================================*/
-	'args'     => array(
+	'args'       => array(
 		'label'             => __( 'Gallery type', GALLERY_TEXT_DOMAIN ),
-		'labels'        => '', // automatically generate the labels.
+		'labels'            => '', // automatically generate the labels.
 		'hierarchical'      => true,
 		'show_admin_column' => true,
 		'public'            => false,
@@ -44,5 +44,5 @@ return array(
 	/**=============================================================
 	 * These are the post types to bind the taxonomy to.
 	 *============================================================*/
-	'post_types' => array ( 'gallery' ),
+	'post_types' => array( 'gallery' ),
 );

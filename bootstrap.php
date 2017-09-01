@@ -37,7 +37,7 @@ namespace PurpleProdigy\Gallery;
 
 use PurpleProdigy\Polestar\Custom as CustomModule;
 
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	die( "Nothing to see here." );
 }
 
@@ -50,7 +50,7 @@ if ( is_ssl() ) {
 define( 'GALLERY_URL', $plugin_url );
 define( 'GALLERY_TEXT_DOMAIN', 'gallery' );
 
-include( __DIR__ . '/src/plugin.php');
+include __DIR__ . '/src/plugin.php';
 
 /**
  * Register a plugin with the Custom Module.

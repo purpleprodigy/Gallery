@@ -35,6 +35,7 @@ function load_the_gallery_archive_template( $theme_archive_template ) {
 		return $plugin_archive_template;
 
 	}
+
 	return $theme_archive_template;
 
 
@@ -146,7 +147,6 @@ function gallery_after_setup_theme() {
 	global $_wp_additional_image_sizes;
 
 	if ( ! isset( $_wp_additional_image_sizes['gallery'] ) ) {
-		add_image_size( 'gallery', 300, 200, TRUE );
+		add_image_size( 'gallery', 300, 200, true );
 	}
-
 }

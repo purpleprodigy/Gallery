@@ -38,7 +38,7 @@ function do_gallery_archive_loop() {
 	foreach ( $records as $record ) {
 		$term_slug = $record['term_slug'];
 
-		include( GALLERY_DIR . 'src/views/container.php' );
+		include GALLERY_DIR . 'src/views/container.php';
 	}
 }
 
@@ -62,7 +62,7 @@ function loop_and_render_gallery( array $gallery ) {
 		$post_thumbnail_metadata = $gallery['thumbnail_metadata'];
 		$post_thumbnail_title    = $gallery['post_title'];
 
-		include( GALLERY_DIR . 'src/views/gallery.php' );
+		include GALLERY_DIR . 'src/views/gallery.php';
 	}
 }
 

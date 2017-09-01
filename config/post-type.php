@@ -32,8 +32,8 @@ return array(
 	 * Supported features for this post type
 	 *============================================*/
 	'features'  => array(
-		'base_post_type'  => 'page',
-		'exclude'         => array(
+		'base_post_type' => 'page',
+		'exclude'        => array(
 			'excerpt',
 			'comments',
 			'trackbacks',
