@@ -20,4 +20,3 @@ if ( isset ( $use_term_container ) && $use_term_container ) : ?>
 	<?php if ( isset ( $use_term_container ) && $use_term_container ) : ?>
 </div>
 <?php endif; ?>
-

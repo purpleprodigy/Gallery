@@ -16,7 +16,7 @@ add_filter( 'add_custom_taxonomy_runtime_config', __NAMESPACE__ . '\register_gal
 /**
  * Loading in the post type and taxonomy runtime configurations.
  *
- * @since 1.3.0
+ * @since 1.0.0
  *
  * @param array $configurations Array of all the configurations.
  *
