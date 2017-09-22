@@ -35,7 +35,6 @@ function load_the_gallery_archive_template( $theme_archive_template ) {
 		return $plugin_archive_template;
 
 	}
-
 	return $theme_archive_template;
 }
 
@@ -77,9 +76,7 @@ function get_posts_grouped_by_term( $post_type_name, $taxonomy_name ) {
 			'thumbnail_metadata' => maybe_unserialize( $record->thumbnail_metadata ),
 			'menu_order'         => $record->menu_order,
 		);
-
 	}
-
 	return $groupings;
 }
 

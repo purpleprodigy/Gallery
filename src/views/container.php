@@ -2,12 +2,11 @@
 
 use PurpleProdigy\Gallery\Template as Template;
 
-?>
-<?php
-if ( isset ( $use_term_container ) && $use_term_container ) : ?>
+$is_use_term_container_true =  ( isset ( $use_term_container ) && $use_term_container ) ;
+
+if ( $is_use_term_container_true )  ?>
 <div class="gallery-container">
     <h1>Gallery</h1>
-	<?php endif; ?>
 	<?php
 	if ( $is_calling_source === 'template' ) {
 		Template\loop_and_render_gallery( $record['posts'] );
@@ -15,8 +14,6 @@ if ( isset ( $use_term_container ) && $use_term_container ) : ?>
 	} else {
 		include __DIR__ . '/gallery.php';
 	}
-	?>
-
-	<?php if ( isset ( $use_term_container ) && $use_term_container ) : ?>
+	if ( $is_use_term_container_true ) ?>
 </div>
-<?php endif; ?>
+
