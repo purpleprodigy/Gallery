@@ -20,18 +20,39 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  * @return void
  */
 function enqueue_assets() {
+	$asset_file   = 'assets/css/style.css';
+	$enqueue_list = apply_filters( 'enqueue_styles', array( 'dashicons', $asset_file ) );
+	if ( ! $enqueue_list ) {
+		return;
+	}
 
-	$asset_file = 'assets/css/style.css';
-
-	wp_enqueue_style(
-		'gallery_style',
-		GALLERY_URL . $asset_file,
-		array(),
-		get_asset_current_version_number( GALLERY_DIR . $asset_file )
-	);
-
-	wp_enqueue_style( 'dashicons' );
+	foreach ( $enqueue_list as $asset_handle ) {
+		if ( 'dashicons' === $asset_handle ) {
+			wp_enqueue_style( 'dashicons' );
+		} elseif ( $asset_file === $asset_handle ) {
+			wp_enqueue_style(
+				'gallery_style',
+				GALLERY_URL . $asset_file,
+				array(),
+				get_asset_current_version_number( GALLERY_DIR . $asset_file )
+			);
+		}
+	}
 }
+
+//function enqueue_assets() {
+//
+//	$asset_file = 'assets/css/style.css';
+//
+//	wp_enqueue_style(
+//		'gallery_style',
+//		GALLERY_URL . $asset_file,
+//		array(),
+//		get_asset_current_version_number( GALLERY_DIR . $asset_file )
+//	);
+//
+//	wp_enqueue_style( 'dashicons' );
+//}
 
 /**
  * Autoload plugin files.

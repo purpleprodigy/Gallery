@@ -16,4 +16,3 @@ if ( $is_use_term_container_true )  ?>
 	}
 	if ( $is_use_term_container_true ) ?>
 </div>
-
