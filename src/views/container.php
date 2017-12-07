@@ -1,6 +1,6 @@
 <?php
 
-use PurpleProdigy\Gallery\Template as Template;
+use PurpleProdigy\Gallery\Template;
 
 $is_use_term_container_true = ( isset ( $use_term_container ) && $use_term_container );
 

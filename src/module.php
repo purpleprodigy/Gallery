@@ -11,6 +11,21 @@
 
 namespace PurpleProdigy\Gallery;
 
+use PurpleProdigy\Polestar\Custom;
+
+/**
+ * Register the plugin with the Polestar's Custom Module.
+ *
+ * @since 1.0.0
+ *
+ * @param string $root_file Plugin's root bootstrap file.
+ *
+ * @return void
+ */
+function register_with_custom_module( $root_file ) {
+	Custom\register_plugin( $root_file );
+}
+
 add_filter( 'add_custom_post_type_runtime_config', __NAMESPACE__ . '\register_gallery_custom_configs' );
 add_filter( 'add_custom_taxonomy_runtime_config', __NAMESPACE__ . '\register_gallery_custom_configs' );
 /**

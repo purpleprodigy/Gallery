@@ -44,6 +44,9 @@ return array(
 			'genesis-layouts',
 			'genesis-scripts',
 		),
+		'additional'     => array(
+			'',
+		),
 	),
 
 	/**============================================

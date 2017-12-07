@@ -6,8 +6,7 @@
  * @author      Purple Prodigy
  * @licence     GPL-2.0+
  * @link        https://purpleprodigy.com
- */
-/*
+ *
  * @wordpress-plugin
  * Plugin Name:     Gallery
  * Plugin URI:      https://github.com/purpleprodigy/Gallery
@@ -17,8 +16,9 @@
  * Author URI:      https://purpleprodigy.com
  * Text Domain:     gallery
  * Requires WP:     4.7
- * Requires PHP:    5.5
+ * Requires PHP:    5.6
  */
+
 /*
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -35,22 +35,28 @@
 
 namespace PurpleProdigy\Gallery;
 
-use PurpleProdigy\Polestar\Custom as CustomModule;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	die( "Nothing to see here." );
 }
 
-define( 'GALLERY_PLUGIN', __FILE__ );
-define( 'GALLERY_DIR', trailingslashit( __DIR__ ) );
-$plugin_url = plugin_dir_url( __FILE__ );
-if ( is_ssl() ) {
-	$plugin_url = str_replace( 'http://', 'https://', $plugin_url );
-}
-define( 'GALLERY_URL', $plugin_url );
-define( 'GALLERY_TEXT_DOMAIN', 'gallery' );
+/**
+ * Set up the plugin's constants.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function init_constants() {
+	$plugin_url = plugin_dir_url( __FILE__ );
+	if ( is_ssl() ) {
+		$plugin_url = str_replace( 'http://', 'https://', $plugin_url );
+	}
 
-include __DIR__ . '/src/plugin.php';
+	define( 'GALLERY_URL', $plugin_url );
+	define( 'GALLERY_DIR', plugin_dir_path( __FILE__ ) );
+	define( 'GALLERY_PLUGIN', __FILE__ );
+	define( 'GALLERY_TEXT_DOMAIN', 'gallery' );
+}
 
 /**
  * Register a plugin with the Custom Module.
@@ -78,4 +84,18 @@ function delete_rewrite_rules_on_plugin_status_change() {
 	delete_option( 'rewrite_rules' );
 }
 
-CustomModule\register_plugin( __FILE__ );
+add_action( 'polestar_is_loaded', __NAMESPACE__ . '\launch' );
+/**
+ * Launch the plugin
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function launch() {
+	init_constants();
+
+	require __DIR__ . '/src/plugin.php';
+
+	launch_plugin( __FILE__ );
+}
