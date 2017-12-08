@@ -5,8 +5,8 @@
  * @package     PurpleProdigy\Gallery
  * @since       1.0.0
  * @author      Purple Prodigy
- * @link        https:/purpleprodigy.com
- * @licence     GNU General Public License 2.0+
+ * @link        https://purpleprodigy.com
+ * @license     GNU-2.0+
  */
 
 namespace PurpleProdigy\Gallery;
